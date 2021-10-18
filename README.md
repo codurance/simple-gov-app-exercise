@@ -33,15 +33,15 @@ The business have also asked you to implement validation on all the form inputs:
 - If a field that accepts a name has any [non simple latin charset](https://en.wikipedia.org/wiki/ISO_basic_Latin_alphabet) then it should show an appropriate error message
 - If a field that acccepts an age has any non-numeric input then it should show an appropriate error message
 
-When a user successfully fills in all the 
+When a user successfully submits a form they should be redirected back to the homepage
 
 
 ## Working on this project
 This project relies upon a mock API called [json-server](https://github.com/typicode/json-server) which provides us with a schemaless API that we can save and retrieve data from like a conventional API. When we post data to it we can see the result in `db.json` file in the package root
 
-We can run it using the command below
+We can run it using the command: `json-server --watch db.json --port 3004`
 
-To help us interrogate this API there is a postman collection in the `/assets` folder of this project that will help us post and get data from it without having to use the UI - this will help us check our validation rules are working
+To help us interrogate this API there is a postman collection in the `/assets` folder of this project that will help us post and get data from it without having to use the UI - this will help us check our validation rules are working when we run the mock API
 
 ## Install dependencies
 `npm install` or `npm i`
