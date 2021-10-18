@@ -21,6 +21,10 @@ function Homepage() {
                     <h3>Your fathers details:</h3>
                     <Link data-testid="fathers-details-link" to="/fathers-details">Your fathers details page</Link>
                   </div>
+                  <div>
+                    <h3>Your mothers details:</h3>
+                    <Link data-testid="fathers-details-link" to="/mothers-details">Your mothers details page</Link>
+                  </div>
                 </div>
             </Page>
           <Footer />

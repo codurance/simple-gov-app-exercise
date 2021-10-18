@@ -3,32 +3,34 @@ import axios from 'axios';
 import { Input, Fieldset, Label, LabelText } from 'govuk-react';
 import { Page, Footer } from 'govuk-react';
 
-function FathersDetails() {
+function MothersDetails() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [age, setAge] = useState("");
+    const [maidenName, setMaidenName] = useState("");
 
     useEffect(() => {
-        const getFathersDetails = async () => {
-            const res = await axios.get(`http://localhost:3004/father`);
+        const getMothersDetails = async () => {
+            const res = await axios.get(`http://localhost:3004/mother`);
 
             if (res) {
-                const { firstName, lastName, age } = res.data;
+                const { firstName, lastName, age, maidenName } = res.data;
 
                 setFirstName(firstName);
                 setLastName(lastName);
                 setAge(age);
+                setMaidenName(maidenName)
             }
         }
 
-        getFathersDetails();
+        getMothersDetails();
     }, []);
 
     const onSubmit = event => {
         event.preventDefault();
 
-        axios.post('http://localhost:3004/father', {
-            firstName, lastName, age
+        axios.post('http://localhost:3004/mother', {
+            firstName, lastName, age, maidenName
         });
     }
 
@@ -36,10 +38,10 @@ function FathersDetails() {
         <>
             <Page>
                 <div className="wrapper">
-                    <h2>Your Fathers Details</h2>
+                    <h2>Your Mothers Details</h2>
                         <form onSubmit={onSubmit}>
                             <Fieldset>
-                                <Fieldset.Legend>Please enter his details</Fieldset.Legend>
+                                <Fieldset.Legend>Please enter her details</Fieldset.Legend>
                                 <div className="form-group">
                                     <Label>
                                         <LabelText>
@@ -54,6 +56,14 @@ function FathersDetails() {
                                             Last Name
                                         </LabelText>
                                         <Input name={"lastName"} defaultValue={lastName} onChange={e => setLastName(e.target.value)} />
+                                    </Label>
+                                </div>
+                                <div className="form-group">
+                                    <Label>
+                                        <LabelText>
+                                            Maiden Name
+                                        </LabelText>
+                                        <Input name={"lastName"} defaultValue={maidenName} onChange={e => setMaidenName(e.target.value)} />
                                     </Label>
                                 </div>
                                 <div className="form-group">
@@ -76,4 +86,4 @@ function FathersDetails() {
     )
 }
 
-export { FathersDetails }
+export { MothersDetails }
