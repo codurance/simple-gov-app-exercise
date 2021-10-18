@@ -3,6 +3,8 @@ You've been asked to take over a project for a local government organisation fro
 
 Luckily the consultancy is using an [open source library](https://github.com/govuk-react/govuk-react) that uses React components that comply with these standards so we don't have to create these components from scratch ourselves
 
+A useful resource to view these components can be [found here using Storybook](https://govuk-react.github.io/govuk-react/?path=/story/welcome--page) so we can see what the components look like and decide if they would be useful to us 
+
 ## The task
 
 The project is to gather details from users about themselves and their parents for an upcoming alpha release. They can review their answers and if they have filled everything in, submit them.
@@ -38,6 +40,8 @@ When a user successfully fills in all the
 This project relies upon a mock API called [json-server](https://github.com/typicode/json-server) which provides us with a schemaless API that we can save and retrieve data from like a conventional API. When we post data to it we can see the result in `db.json` file in the package root
 
 We can run it using the command below
+
+To help us interrogate this API there is a postman collection in the `/assets` folder of this project that will help us post and get data from it without having to use the UI - this will help us check our validation rules are working
 
 ## Install dependencies
 `npm install` or `npm i`
